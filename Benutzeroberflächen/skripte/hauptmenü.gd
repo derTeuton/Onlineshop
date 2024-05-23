@@ -6,10 +6,12 @@ extends PanelContainer
 @onready var neutral_title : Label = $HSplitContainer/Joint/VBoxContainer/VSplitContainer/HBoxContainer/neutral_title
 @onready var gender_title : HBoxContainer = $HSplitContainer/Joint/VBoxContainer/VSplitContainer/VSplitContainer/gender_title
 
-enum GENDER { neutral, mann, platzhalter1, platzhalter2, futanari, platzhalter3, platzhalter4, weib}
+enum GENDER { neutral, mann, platzhalter1, platzhalter2, futanari, platzhalter3, platzhalter4, weib }
+
 @export var _joint_gender : int
 @export var _joint_name : String
 
+func _process(delta): print(GENDER.find_key(0))
 
 func _on_joint_neutral_pressed(): 
 	if joint_neutral.button_pressed: 
