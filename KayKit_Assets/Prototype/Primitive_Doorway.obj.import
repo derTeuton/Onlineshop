@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dw00dfpjcn6rq"
+path="res://.godot/imported/Primitive_Doorway.obj-005ca69187dc448e2bfcfed4b770de39.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Primitive_Doorway.obj-005ca69187dc448e2bfcfed4b770de39.mesh"]
+
+source_file="res://KayKit_Assets/Prototype/Primitive_Doorway.obj"
+dest_files=["res://.godot/imported/Primitive_Doorway.obj-005ca69187dc448e2bfcfed4b770de39.mesh", "res://.godot/imported/Primitive_Doorway.obj-005ca69187dc448e2bfcfed4b770de39.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
