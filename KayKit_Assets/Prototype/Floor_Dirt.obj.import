@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b15m5ad1vuy4u"
+path="res://.godot/imported/Floor_Dirt.obj-9c86dbda37ebd8e0881964fb3fedfa91.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Floor_Dirt.obj-9c86dbda37ebd8e0881964fb3fedfa91.mesh"]
+
+source_file="res://KayKit_Assets/Prototype/Floor_Dirt.obj"
+dest_files=["res://.godot/imported/Floor_Dirt.obj-9c86dbda37ebd8e0881964fb3fedfa91.mesh", "res://.godot/imported/Floor_Dirt.obj-9c86dbda37ebd8e0881964fb3fedfa91.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
