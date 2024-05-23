@@ -1,0 +1,95 @@
+[gd_scene load_steps=5 format=3 uid="uid://deut05orgkliy"]
+
+[ext_resource type="PackedScene" uid="uid://fqt6hpj2ikrt" path="res://Geschäftsvorlagen/Geschäft_3x3.tscn" id="1_p1vy7"]
+[ext_resource type="ArrayMesh" uid="uid://c10o5yykdxcoa" path="res://KayKit_Assets/Prototype/Floor.obj" id="2_uimg1"]
+[ext_resource type="ArrayMesh" uid="uid://b15m5ad1vuy4u" path="res://KayKit_Assets/Prototype/Floor_Dirt.obj" id="3_mugrf"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_os88u"]
+points = PackedVector3Array(1.99995, 0.399961, 2, 1.99995, 0, 2, 1.99995, 0.399961, -2, 1.89972, 0.5, 1.89977, -2, 0.399961, 2, -2, 0, 2, 1.99995, 0, -2, -2, 0.399961, -2, 1.89972, 0.5, -1.90016, -1.90016, 0.5, 1.89977, -2, 0, -2, -1.90016, 0.5, -1.90016)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Geschäft1" parent="." instance=ExtResource("1_p1vy7")]
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+mesh = ExtResource("2_uimg1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_os88u")
+
+[node name="Floor2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+mesh = ExtResource("2_uimg1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor2"]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_os88u")
+
+[node name="Floor3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+mesh = ExtResource("2_uimg1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor3"]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor3/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_os88u")
+
+[node name="Floor4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 4)
+mesh = ExtResource("2_uimg1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor4"]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_os88u")
+
+[node name="Floor5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4)
+mesh = ExtResource("2_uimg1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor5"]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_os88u")
+
+[node name="Floor6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -4)
+mesh = ExtResource("2_uimg1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor6"]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_os88u")
+
+[node name="FloorDirt" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+mesh = ExtResource("3_mugrf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="FloorDirt"]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorDirt/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_os88u")
+
+[node name="FloorDirt2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+mesh = ExtResource("3_mugrf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="FloorDirt2"]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorDirt2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_os88u")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 8, 0, 0)
