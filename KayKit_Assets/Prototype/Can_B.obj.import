@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ct0te5fkh1bck"
+path="res://.godot/imported/Can_B.obj-ba1677ed01448561e40deba21402a5c5.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Can_B.obj-ba1677ed01448561e40deba21402a5c5.mesh"]
+
+source_file="res://KayKit_Assets/Prototype/Can_B.obj"
+dest_files=["res://.godot/imported/Can_B.obj-ba1677ed01448561e40deba21402a5c5.mesh", "res://.godot/imported/Can_B.obj-ba1677ed01448561e40deba21402a5c5.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
