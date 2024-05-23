@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b225py3dgq2oj"]
+[gd_scene load_steps=6 format=3 uid="uid://b225py3dgq2oj"]
 
 [ext_resource type="Script" path="res://Benutzeroberflächen/skripte/hauptszene.gd" id="1_m5bkv"]
 [ext_resource type="PackedScene" uid="uid://04aqy1hau4yt" path="res://Spieler/gender_catalog.tscn" id="2_ng2d2"]
 [ext_resource type="Script" path="res://Benutzeroberflächen/skripte/hauptmenü.gd" id="2_u43ak"]
 [ext_resource type="PackedScene" uid="uid://deut05orgkliy" path="res://Einkaufszentrum.tscn" id="3_qjs1i"]
+[ext_resource type="StyleBox" uid="uid://1ue53g8sawn" path="res://Benutzeroberflächen/themen/Panel_blue.tres" id="5_xly3q"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_m5bkv")
@@ -26,53 +27,65 @@ offset_right = 490.5
 offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
 script = ExtResource("2_u43ak")
 
-[node name="HSplitContainer" type="HSplitContainer" parent="Hauptmenü"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Hauptmenü"]
 layout_mode = 2
 
-[node name="Joint" type="PanelContainer" parent="Hauptmenü/HSplitContainer"]
+[node name="Joint" type="PanelContainer" parent="Hauptmenü/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("5_xly3q")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Hauptmenü/HBoxContainer/Joint"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Hauptmenü/HSplitContainer/Joint"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer"]
+[node name="Label" type="Label" parent="Hauptmenü/HBoxContainer/Joint/VBoxContainer"]
 layout_mode = 2
 text = "Als Kunde einmarschieren"
 
-[node name="HSeparator" type="HSeparator" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="Hauptmenü/HBoxContainer/Joint/VBoxContainer"]
 layout_mode = 2
 
-[node name="joint_name" type="LineEdit" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="Hauptmenü/HBoxContainer/Joint/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Hauptmenü/HBoxContainer/Joint/VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Hauptmenü/HBoxContainer/Joint/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Einstellungen Kunde"
+
+[node name="joint_name" type="LineEdit" parent="Hauptmenü/HBoxContainer/Joint/VBoxContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 placeholder_text = "Kundenindex"
 
-[node name="VSplitContainer" type="VSplitContainer" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer"]
+[node name="VSplitContainer" type="VSplitContainer" parent="Hauptmenü/HBoxContainer/Joint/VBoxContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer/VSplitContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Hauptmenü/HBoxContainer/Joint/VBoxContainer/PanelContainer/VBoxContainer/VSplitContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer/VSplitContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="Hauptmenü/HBoxContainer/Joint/VBoxContainer/PanelContainer/VBoxContainer/VSplitContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Geschlecht"
 
-[node name="joint_neutral" type="CheckButton" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer/VSplitContainer/HBoxContainer"]
+[node name="joint_neutral" type="CheckButton" parent="Hauptmenü/HBoxContainer/Joint/VBoxContainer/PanelContainer/VBoxContainer/VSplitContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 
-[node name="neutral_title" type="Label" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer/VSplitContainer/HBoxContainer"]
+[node name="neutral_title" type="Label" parent="Hauptmenü/HBoxContainer/Joint/VBoxContainer/PanelContainer/VBoxContainer/VSplitContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Tumtum"
 
-[node name="VSplitContainer" type="VSplitContainer" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer/VSplitContainer"]
+[node name="VSplitContainer" type="VSplitContainer" parent="Hauptmenü/HBoxContainer/Joint/VBoxContainer/PanelContainer/VBoxContainer/VSplitContainer"]
 layout_mode = 2
 
-[node name="joint_gender" type="HSlider" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer/VSplitContainer/VSplitContainer"]
+[node name="joint_gender" type="HSlider" parent="Hauptmenü/HBoxContainer/Joint/VBoxContainer/PanelContainer/VBoxContainer/VSplitContainer/VSplitContainer"]
 layout_mode = 2
 min_value = 1.0
 max_value = 7.0
@@ -80,69 +93,107 @@ value = 1.0
 tick_count = 7
 ticks_on_borders = true
 
-[node name="gender_title" type="HBoxContainer" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer/VSplitContainer/VSplitContainer"]
+[node name="gender_title" type="HBoxContainer" parent="Hauptmenü/HBoxContainer/Joint/VBoxContainer/PanelContainer/VBoxContainer/VSplitContainer/VSplitContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="Mann" type="Label" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer/VSplitContainer/VSplitContainer/gender_title"]
+[node name="Mann" type="Label" parent="Hauptmenü/HBoxContainer/Joint/VBoxContainer/PanelContainer/VBoxContainer/VSplitContainer/VSplitContainer/gender_title"]
 layout_mode = 2
 size_flags_vertical = 1
 text = "Zachar"
 
-[node name="Mann_zu_Weib_künstlich" type="Label" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer/VSplitContainer/VSplitContainer/gender_title"]
+[node name="Mann_zu_Weib_künstlich" type="Label" parent="Hauptmenü/HBoxContainer/Joint/VBoxContainer/PanelContainer/VBoxContainer/VSplitContainer/VSplitContainer/gender_title"]
 layout_mode = 2
 text = "Saris adam"
 
-[node name="Mann_zu_Weib_natürlich" type="Label" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer/VSplitContainer/VSplitContainer/gender_title"]
+[node name="Mann_zu_Weib_natürlich" type="Label" parent="Hauptmenü/HBoxContainer/Joint/VBoxContainer/PanelContainer/VBoxContainer/VSplitContainer/VSplitContainer/gender_title"]
 layout_mode = 2
 text = "Saris hamah"
 
-[node name="Futanari" type="Label" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer/VSplitContainer/VSplitContainer/gender_title"]
+[node name="Futanari" type="Label" parent="Hauptmenü/HBoxContainer/Joint/VBoxContainer/PanelContainer/VBoxContainer/VSplitContainer/VSplitContainer/gender_title"]
 layout_mode = 2
 text = "Androgynos"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Weib_zu_Mann_natürlich" type="Label" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer/VSplitContainer/VSplitContainer/gender_title"]
+[node name="Weib_zu_Mann_natürlich" type="Label" parent="Hauptmenü/HBoxContainer/Joint/VBoxContainer/PanelContainer/VBoxContainer/VSplitContainer/VSplitContainer/gender_title"]
 layout_mode = 2
 text = "Aylonit hamah"
 
-[node name="Weib_zu_Mann_künstlich" type="Label" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer/VSplitContainer/VSplitContainer/gender_title"]
+[node name="Weib_zu_Mann_künstlich" type="Label" parent="Hauptmenü/HBoxContainer/Joint/VBoxContainer/PanelContainer/VBoxContainer/VSplitContainer/VSplitContainer/gender_title"]
 layout_mode = 2
 text = "Aylonit adam"
 
-[node name="Weib" type="Label" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer/VSplitContainer/VSplitContainer/gender_title"]
+[node name="Weib" type="Label" parent="Hauptmenü/HBoxContainer/Joint/VBoxContainer/PanelContainer/VBoxContainer/VSplitContainer/VSplitContainer/gender_title"]
 layout_mode = 2
 text = "Nekevah"
 
-[node name="GhettoIP" type="LineEdit" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer"]
+[node name="PanelContainer2" type="PanelContainer" parent="Hauptmenü/HBoxContainer/Joint/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Hauptmenü/HBoxContainer/Joint/VBoxContainer/PanelContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Hauptmenü/HBoxContainer/Joint/VBoxContainer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Einstellungen Verwalter"
+
+[node name="HSplitContainer" type="HSplitContainer" parent="Hauptmenü/HBoxContainer/Joint/VBoxContainer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+split_offset = 557
+
+[node name="GhettoIP" type="LineEdit" parent="Hauptmenü/HBoxContainer/Joint/VBoxContainer/PanelContainer2/VBoxContainer/HSplitContainer"]
 layout_mode = 2
 placeholder_text = "Einmarsch koordinaten"
 
-[node name="joint_button" type="Button" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer"]
+[node name="GhettoPort" type="LineEdit" parent="Hauptmenü/HBoxContainer/Joint/VBoxContainer/PanelContainer2/VBoxContainer/HSplitContainer"]
+layout_mode = 2
+placeholder_text = "Einmarsch dimension"
+
+[node name="HSeparator2" type="HSeparator" parent="Hauptmenü/HBoxContainer/Joint/VBoxContainer"]
+layout_mode = 2
+
+[node name="joint_button" type="Button" parent="Hauptmenü/HBoxContainer/Joint/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Beitreten"
 
-[node name="Horst" type="PanelContainer" parent="Hauptmenü/HSplitContainer"]
+[node name="VSeparator" type="VSeparator" parent="Hauptmenü/HBoxContainer"]
+custom_minimum_size = Vector2(15, 0)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Hauptmenü/HSplitContainer/Horst"]
+[node name="Horst" type="PanelContainer" parent="Hauptmenü/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("5_xly3q")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Hauptmenü/HBoxContainer/Horst"]
 layout_mode = 2
 
-[node name="horst_title" type="Label" parent="Hauptmenü/HSplitContainer/Horst/VBoxContainer"]
+[node name="horst_title" type="Label" parent="Hauptmenü/HBoxContainer/Horst/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 text = "Verwalten von Kunden"
 
-[node name="HSeparator2" type="HSeparator" parent="Hauptmenü/HSplitContainer/Horst/VBoxContainer"]
+[node name="HSeparator2" type="HSeparator" parent="Hauptmenü/HBoxContainer/Horst/VBoxContainer"]
 layout_mode = 2
 
-[node name="horst_button" type="Button" parent="Hauptmenü/HSplitContainer/Horst/VBoxContainer"]
+[node name="Label" type="Label" parent="Hauptmenü/HBoxContainer/Horst/VBoxContainer"]
+layout_mode = 2
+text = "Einstellungen
+blah
+blah
+blah
+blah
+blah"
+
+[node name="HSeparator3" type="HSeparator" parent="Hauptmenü/HBoxContainer/Horst/VBoxContainer"]
+layout_mode = 2
+
+[node name="horst_button" type="Button" parent="Hauptmenü/HBoxContainer/Horst/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
@@ -160,8 +211,8 @@ grow_horizontal = 2
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 spawn_path = NodePath("../SpawnPunkt")
 
-[connection signal="text_changed" from="Hauptmenü/HSplitContainer/Joint/VBoxContainer/joint_name" to="Hauptmenü" method="_on_line_edit_2_text_changed"]
-[connection signal="pressed" from="Hauptmenü/HSplitContainer/Joint/VBoxContainer/VSplitContainer/HBoxContainer/joint_neutral" to="Hauptmenü" method="_on_joint_neutral_pressed"]
-[connection signal="drag_ended" from="Hauptmenü/HSplitContainer/Joint/VBoxContainer/VSplitContainer/VSplitContainer/joint_gender" to="Hauptmenü" method="_on_joint_gender_drag_ended"]
-[connection signal="pressed" from="Hauptmenü/HSplitContainer/Joint/VBoxContainer/joint_button" to="." method="_on_joint_button_pressed"]
-[connection signal="pressed" from="Hauptmenü/HSplitContainer/Horst/VBoxContainer/horst_button" to="." method="_on_horst_button_pressed"]
+[connection signal="text_changed" from="Hauptmenü/HBoxContainer/Joint/VBoxContainer/PanelContainer/VBoxContainer/joint_name" to="Hauptmenü" method="_on_line_edit_2_text_changed"]
+[connection signal="pressed" from="Hauptmenü/HBoxContainer/Joint/VBoxContainer/PanelContainer/VBoxContainer/VSplitContainer/HBoxContainer/joint_neutral" to="Hauptmenü" method="_on_joint_neutral_pressed"]
+[connection signal="drag_ended" from="Hauptmenü/HBoxContainer/Joint/VBoxContainer/PanelContainer/VBoxContainer/VSplitContainer/VSplitContainer/joint_gender" to="Hauptmenü" method="_on_joint_gender_drag_ended"]
+[connection signal="pressed" from="Hauptmenü/HBoxContainer/Joint/VBoxContainer/joint_button" to="." method="_on_joint_button_pressed"]
+[connection signal="pressed" from="Hauptmenü/HBoxContainer/Horst/VBoxContainer/horst_button" to="." method="_on_horst_button_pressed"]
