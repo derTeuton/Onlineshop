@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://04aqy1hau4yt"]
+
+[ext_resource type="PackedScene" uid="uid://b8elcfrj1vhfb" path="res://Spieler/Spieler_female.tscn" id="1_r2v2w"]
+[ext_resource type="PackedScene" uid="uid://cro1f06hk60so" path="res://Spieler/Spieler_male.tscn" id="2_fji5f"]
+[ext_resource type="PackedScene" uid="uid://b7wh5nit2tkgt" path="res://Spieler/Spieler_test.tscn" id="3_8d3bd"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="weib" parent="." instance=ExtResource("1_r2v2w")]
+visible = false
+
+[node name="mann" parent="." instance=ExtResource("2_fji5f")]
+visible = false
+
+[node name="neutral" parent="." instance=ExtResource("3_8d3bd")]
+visible = false

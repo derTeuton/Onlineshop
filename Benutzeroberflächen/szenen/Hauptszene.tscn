@@ -1,0 +1,167 @@
+[gd_scene load_steps=5 format=3 uid="uid://b225py3dgq2oj"]
+
+[ext_resource type="Script" path="res://Benutzeroberflächen/skripte/hauptszene.gd" id="1_m5bkv"]
+[ext_resource type="PackedScene" uid="uid://04aqy1hau4yt" path="res://Spieler/gender_catalog.tscn" id="2_ng2d2"]
+[ext_resource type="Script" path="res://Benutzeroberflächen/skripte/hauptmenü.gd" id="2_u43ak"]
+[ext_resource type="PackedScene" uid="uid://deut05orgkliy" path="res://Einkaufszentrum.tscn" id="3_qjs1i"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_m5bkv")
+gender_catalog = ExtResource("2_ng2d2")
+ghetto = ExtResource("3_qjs1i")
+
+[node name="GhettoInstance" type="Node" parent="."]
+
+[node name="SpawnPunkt" type="Node3D" parent="."]
+
+[node name="Hauptmenü" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -490.5
+offset_top = -100.0
+offset_right = 490.5
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_u43ak")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="Hauptmenü"]
+layout_mode = 2
+
+[node name="Joint" type="PanelContainer" parent="Hauptmenü/HSplitContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Hauptmenü/HSplitContainer/Joint"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer"]
+layout_mode = 2
+text = "Als Kunde einmarschieren"
+
+[node name="HSeparator" type="HSeparator" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer"]
+layout_mode = 2
+
+[node name="joint_name" type="LineEdit" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Kundenindex"
+
+[node name="VSplitContainer" type="VSplitContainer" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer/VSplitContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer/VSplitContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Geschlecht"
+
+[node name="joint_neutral" type="CheckButton" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer/VSplitContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="neutral_title" type="Label" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer/VSplitContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Tumtum"
+
+[node name="VSplitContainer" type="VSplitContainer" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer/VSplitContainer"]
+layout_mode = 2
+
+[node name="joint_gender" type="HSlider" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer/VSplitContainer/VSplitContainer"]
+layout_mode = 2
+min_value = 1.0
+max_value = 7.0
+value = 1.0
+tick_count = 7
+ticks_on_borders = true
+
+[node name="gender_title" type="HBoxContainer" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer/VSplitContainer/VSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Mann" type="Label" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer/VSplitContainer/VSplitContainer/gender_title"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Zachar"
+
+[node name="Mann_zu_Weib_künstlich" type="Label" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer/VSplitContainer/VSplitContainer/gender_title"]
+layout_mode = 2
+text = "Saris adam"
+
+[node name="Mann_zu_Weib_natürlich" type="Label" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer/VSplitContainer/VSplitContainer/gender_title"]
+layout_mode = 2
+text = "Saris hamah"
+
+[node name="Futanari" type="Label" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer/VSplitContainer/VSplitContainer/gender_title"]
+layout_mode = 2
+text = "Androgynos"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Weib_zu_Mann_natürlich" type="Label" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer/VSplitContainer/VSplitContainer/gender_title"]
+layout_mode = 2
+text = "Aylonit hamah"
+
+[node name="Weib_zu_Mann_künstlich" type="Label" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer/VSplitContainer/VSplitContainer/gender_title"]
+layout_mode = 2
+text = "Aylonit adam"
+
+[node name="Weib" type="Label" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer/VSplitContainer/VSplitContainer/gender_title"]
+layout_mode = 2
+text = "Nekevah"
+
+[node name="GhettoIP" type="LineEdit" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Einmarsch koordinaten"
+
+[node name="joint_button" type="Button" parent="Hauptmenü/HSplitContainer/Joint/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Beitreten"
+
+[node name="Horst" type="PanelContainer" parent="Hauptmenü/HSplitContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Hauptmenü/HSplitContainer/Horst"]
+layout_mode = 2
+
+[node name="horst_title" type="Label" parent="Hauptmenü/HSplitContainer/Horst/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Verwalten von Kunden"
+
+[node name="HSeparator2" type="HSeparator" parent="Hauptmenü/HSplitContainer/Horst/VBoxContainer"]
+layout_mode = 2
+
+[node name="horst_button" type="Button" parent="Hauptmenü/HSplitContainer/Horst/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Host"
+
+[node name="DisplayPublicIP" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+spawn_path = NodePath("../SpawnPunkt")
+
+[connection signal="text_changed" from="Hauptmenü/HSplitContainer/Joint/VBoxContainer/joint_name" to="Hauptmenü" method="_on_line_edit_2_text_changed"]
+[connection signal="pressed" from="Hauptmenü/HSplitContainer/Joint/VBoxContainer/VSplitContainer/HBoxContainer/joint_neutral" to="Hauptmenü" method="_on_joint_neutral_pressed"]
+[connection signal="drag_ended" from="Hauptmenü/HSplitContainer/Joint/VBoxContainer/VSplitContainer/VSplitContainer/joint_gender" to="Hauptmenü" method="_on_joint_gender_drag_ended"]
+[connection signal="pressed" from="Hauptmenü/HSplitContainer/Joint/VBoxContainer/joint_button" to="." method="_on_joint_button_pressed"]
+[connection signal="pressed" from="Hauptmenü/HSplitContainer/Horst/VBoxContainer/horst_button" to="." method="_on_horst_button_pressed"]
