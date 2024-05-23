@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ji1iwba8dod5"
+path="res://.godot/imported/Dummy_Base_Dummy_Body.obj-e073c7ab70cd100291d14e59befa65f1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Dummy_Base_Dummy_Body.obj-e073c7ab70cd100291d14e59befa65f1.mesh"]
+
+source_file="res://KayKit_Assets/Prototype/Dummy_Base_Dummy_Body.obj"
+dest_files=["res://.godot/imported/Dummy_Base_Dummy_Body.obj-e073c7ab70cd100291d14e59befa65f1.mesh", "res://.godot/imported/Dummy_Base_Dummy_Body.obj-e073c7ab70cd100291d14e59befa65f1.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
