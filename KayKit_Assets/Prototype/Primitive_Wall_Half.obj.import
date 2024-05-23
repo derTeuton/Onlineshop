@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://r5wmttjihvtf"
+path="res://.godot/imported/Primitive_Wall_Half.obj-4b06153d43f209faff07cc96a28cbbdf.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Primitive_Wall_Half.obj-4b06153d43f209faff07cc96a28cbbdf.mesh"]
+
+source_file="res://KayKit_Assets/Prototype/Primitive_Wall_Half.obj"
+dest_files=["res://.godot/imported/Primitive_Wall_Half.obj-4b06153d43f209faff07cc96a28cbbdf.mesh", "res://.godot/imported/Primitive_Wall_Half.obj-4b06153d43f209faff07cc96a28cbbdf.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

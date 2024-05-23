@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bshe8q1agb4n0"
+path="res://.godot/imported/Primitive_Window.obj-148379dd4ad0a3dea22bce78a4733044.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Primitive_Window.obj-148379dd4ad0a3dea22bce78a4733044.mesh"]
+
+source_file="res://KayKit_Assets/Prototype/Primitive_Window.obj"
+dest_files=["res://.godot/imported/Primitive_Window.obj-148379dd4ad0a3dea22bce78a4733044.mesh", "res://.godot/imported/Primitive_Window.obj-148379dd4ad0a3dea22bce78a4733044.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
